@@ -6,8 +6,21 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
-    <p>
-        This is the second push test 2.0</p>
-</body>
+<body style="height: 32px">
+    <form id="form1" runat="server">
+        <p>
+            ASP.NET PHOTO ALBUM LOGIN</p>
+        <p>
+            Username:
+            <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            Password:<asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+        </p>
+        <p>
+            <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
+            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        </p>
+    </form>
+    </body>
 </html>
