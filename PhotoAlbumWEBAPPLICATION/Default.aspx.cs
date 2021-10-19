@@ -18,10 +18,10 @@ namespace PhotoAlbumWEBAPPLICATION
         public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tinus\OneDrive\Desktop\323Project2\PhotoAlbumWEBAPPLICATION\PhotoAlbumWEBAPPLICATION\App_Data\PhotoSystem.mdf;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            Label1.Visible = false;
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void btnLogin_Click1(object sender, EventArgs e)
         {
             conn = new SqlConnection(constr);
 
@@ -43,6 +43,7 @@ namespace PhotoAlbumWEBAPPLICATION
             {
                 Label1.Text = "Your username and password is incorrect";
                 Label1.ForeColor = System.Drawing.Color.Red;
+                Label1.Visible = true;
 
             }
         }
