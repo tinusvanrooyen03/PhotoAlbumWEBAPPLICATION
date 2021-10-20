@@ -41,7 +41,7 @@ namespace PhotoAlbumWEBAPPLICATION
             }
             else
             {
-                Label1.Text = "Your username and password is incorrect";
+                Label1.Text = "Your username and/or password is incorrect";
                 Label1.ForeColor = System.Drawing.Color.Red;
                 Label1.Visible = true;
 

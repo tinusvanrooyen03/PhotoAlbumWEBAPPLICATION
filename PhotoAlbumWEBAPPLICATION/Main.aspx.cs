@@ -54,7 +54,7 @@ namespace PhotoAlbumWEBAPPLICATION
         public void imagebindGrid()
         {
             connection();
-            query = "Select PhotoID, Photo, CapturedDate, CapturedBy, GeoLocation, Tags from Photo";
+            query = "Select * from Photo";
             SqlCommand com = new SqlCommand(query, con);
             SqlDataReader dr = com.ExecuteReader();
             Gridview1.DataSource = dr;

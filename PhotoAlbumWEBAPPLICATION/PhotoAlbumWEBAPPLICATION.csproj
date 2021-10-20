@@ -72,7 +72,16 @@
       <DependentUpon>PhotoSystem.mdf</DependentUpon>
     </Content>
     <Content Include="Default.aspx" />
+    <Content Include="Images\56aadb196de34027aa0e84f12487b296 %281%29.png" />
+    <Content Include="Images\56aadb196de34027aa0e84f12487b296.png" />
+    <Content Include="Images\Add a little bit of body text.png" />
+    <Content Include="Images\EDST %281%29.png" />
+    <Content Include="Images\EDST %282%29.png" />
+    <Content Include="Images\EDST.png" />
+    <Content Include="Images\pexels-juan-pablo-serrano-arenas-1242348.jpg" />
+    <Content Include="Images\Photo Sharing System.png" />
     <Content Include="Main.aspx" />
+    <Content Include="StyleSheet1.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

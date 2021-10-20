@@ -5,20 +5,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel ="stylesheet" type="text/css" href="StyleSheet1.css" />
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+        }
+        .auto-style2 {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
 </head>
 <body style="height: 32px">
     <form id="form1" runat="server">
-        <p>
-            ASP.NET PHOTO ALBUM LOGIN</p>
-        <p>
+        <p class="auto-style1">
+            <img alt="" class="auto-style2" src="Images/56aadb196de34027aa0e84f12487b296%20(1).png" /></p>
+        <p class="auto-style1">
+            Login</p>
+        <p class="auto-style1">
             Username:
-            <asp:TextBox ID="txtUsername" runat="server"></asp:TextBox>
+            <asp:TextBox ID="txtUsername" runat="server" CssClass="simple-tb"></asp:TextBox>
         </p>
-        <p>
-            Password:<asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+        <p class="auto-style1">
+            Password:<asp:TextBox ID="txtPassword" runat="server" CssClass="simple-tb"></asp:TextBox>
         </p>
-        <p>
-            <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click1" />
+        <p class="auto-style1">
+            <asp:Button ID="btnLogin" runat="server" Text="Log in" OnClick="btnLogin_Click1" CssClass="example_b" />
+            <asp:Button ID="Button1" runat="server" CssClass="example_b" Text="Register" />
+        </p>
+        <p class="auto-style1">
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         </p>
     </form>

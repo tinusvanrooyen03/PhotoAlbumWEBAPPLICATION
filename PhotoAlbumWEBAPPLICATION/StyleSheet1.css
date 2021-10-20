@@ -1,0 +1,63 @@
+﻿body {
+    background-image: url('Images/pexels-juan-pablo-serrano-arenas-1242348.jpg');
+    color: white;
+    font-family: monospace, serif;
+    letter-spacing: 0.05em;
+    background-repeat: no-repeat;
+}
+
+.btn {
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    background: transparent;
+    outline: none;
+    border: 0;
+    color: #fff;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+.example_b {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #60a3bc;
+    padding: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+}
+
+.example_b:hover {
+	text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}
+
+.simple-tb {
+    color: white;
+    width: 200px;
+    height: 35px;
+    border-radius: 5px;
+    transition-property: background-color,border-radius,width,height,color;
+    transition-duration: 0.215s;
+    transition-delay: 0.215s;
+    text-align: center;
+    border: none;
+    float: none;
+    border-bottom: 1px solid blue;
+    font-family: 'Raleway', sans-serif;
+    background-color: transparent;
+}
+.simple-tb:hover {
+        background-color: white;
+        border-radius: 15px;
+        color: black;
+        width: 250px;
+        height: 35px;
+  }

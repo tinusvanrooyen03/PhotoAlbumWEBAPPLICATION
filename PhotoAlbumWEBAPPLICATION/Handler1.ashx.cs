@@ -8,12 +8,7 @@ using System.Web.Services;
 
 namespace PhotoAlbumWEBAPPLICATION
 {
-    /// <summary>
-    /// Summary description for Handler1
-    /// this application is created by vithal wadje for C# corner
-    /// </summary>
-    [WebService(Namespace = "http://tempuri.org/")]
-    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    
 
     public class Handler1 : IHttpHandler
     {
