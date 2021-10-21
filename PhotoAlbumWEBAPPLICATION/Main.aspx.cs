@@ -38,13 +38,14 @@ namespace PhotoAlbumWEBAPPLICATION
                 HttpPostedFile image = FileUpload1.PostedFile;
                 image.InputStream.Read(imgarray, 0, imagefilelenth);
                 connection();
-                query = "Insert into Photo (Photo, CapturedDate, CapturedBy, GeoLocation, Tags) values (@Photo, @CapturedDate, @CapturedBy, @GeoLocation, @Tags)";
+                query = "Insert into Photo (Photo, CapturedDate, CapturedBy, GeoLocation, Tags, UserID) values (@Photo, @CapturedDate, @CapturedBy, @GeoLocation, @Tags, @User)";
                 SqlCommand com = new SqlCommand(query, con);
                 com.Parameters.AddWithValue("@Photo", SqlDbType.Image).Value = imgarray;
                 com.Parameters.AddWithValue("@CapturedDate", SqlDbType.VarChar).Value = TextBox1.Text;
                 com.Parameters.AddWithValue("@CapturedBy", SqlDbType.VarChar).Value = TextBox2.Text;
                 com.Parameters.AddWithValue("@GeoLocation", SqlDbType.VarChar).Value = TextBox3.Text;
                 com.Parameters.AddWithValue("@Tags", SqlDbType.VarChar).Value = TextBox4.Text;
+                com.Parameters.AddWithValue("@User", SqlDbType.Int).Value = TextBox5.Text;
                 com.ExecuteNonQuery();
                 lblEvent.Visible = true;
                 lblEvent.Text = "Image Is Uploaded successfully";
@@ -63,6 +64,11 @@ namespace PhotoAlbumWEBAPPLICATION
         protected void btnUpload_Click(object sender, EventArgs e)
         {
             Imageupload();
+        }
+
+        protected void Gridview1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -31,7 +31,7 @@
         </p>
         <p class="auto-style1">
             <asp:Button ID="btnLogin" runat="server" Text="Log in" OnClick="btnLogin_Click1" CssClass="example_b" />
-            <asp:Button ID="Button1" runat="server" CssClass="example_b" Text="Register" />
+            <asp:Button ID="Button1" runat="server" CssClass="example_b" Text="Register" OnClick="Button1_Click" />
         </p>
         <p class="auto-style1">
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>

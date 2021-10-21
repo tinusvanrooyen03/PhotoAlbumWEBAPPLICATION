@@ -3,7 +3,8 @@
     color: white;
     font-family: monospace, serif;
     letter-spacing: 0.05em;
-    background-repeat: no-repeat;
+    background-repeat:repeat
+    
 }
 
 .btn {
@@ -61,3 +62,8 @@
         width: 250px;
         height: 35px;
   }
+
+.centered-table {
+    margin-left: auto;
+    margin-right: auto;
+}

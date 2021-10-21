@@ -21,6 +21,30 @@ namespace PhotoAlbumWEBAPPLICATION
             Label1.Visible = false;
         }
 
+        public int getPrimaryKeyValue(string sql)
+        {
+            string sqlStatement = sql;
+            int primarykey;
+            using (conn = new SqlConnection(constr))
+            {
+                conn.Open();
+                comm = new SqlCommand(sqlStatement, conn);
+                conn.Close();
+                try
+                {
+                    conn.Open();
+                    primarykey = (int)comm.ExecuteScalar();
+                    conn.Close();
+                    return primarykey;
+                }
+                catch (SqlException error)
+                {
+                    Label1.Text = ("Please contact page advisor!\n" + error.Message);
+                    return -1;
+                }
+
+            }
+        }
         protected void btnLogin_Click1(object sender, EventArgs e)
         {
             conn = new SqlConnection(constr);
@@ -37,7 +61,11 @@ namespace PhotoAlbumWEBAPPLICATION
 
             if (dt.Rows.Count > 0)
             {
-                Response.Redirect("Main.aspx");
+                string sqlUserID = "SELECT UserID FROM Users WHERE Username = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "'";
+                int userID = getPrimaryKeyValue(sqlUserID);
+                Session["UserID"] = userID.ToString();
+                Response.Redirect("MainMenu.aspx");
+                
             }
             else
             {
@@ -46,6 +74,11 @@ namespace PhotoAlbumWEBAPPLICATION
                 Label1.Visible = true;
 
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
