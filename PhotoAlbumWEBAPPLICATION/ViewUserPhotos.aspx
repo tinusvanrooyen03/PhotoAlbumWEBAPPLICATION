@@ -10,7 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-        <asp:GridView ID="Gridview1" runat="server" CssClass="grid1" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" Width="500px">
+        <asp:GridView ID="Gridview1" runat="server" CssClass="grid1" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" Width="500px" style="margin-left: 424px">
             <Columns>
                 <asp:TemplateField HeaderText="Image">
                     <ItemTemplate>

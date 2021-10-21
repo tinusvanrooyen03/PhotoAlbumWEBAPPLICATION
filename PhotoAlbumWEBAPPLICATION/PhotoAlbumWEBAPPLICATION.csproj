@@ -67,9 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\PhotoSystem.mdf" />
-    <Content Include="App_Data\PhotoSystem_log.ldf">
-      <DependentUpon>PhotoSystem.mdf</DependentUpon>
+    <Content Include="App_Data\PhotoSystemV2.mdf" />
+    <Content Include="App_Data\PhotoSystemV2_log.ldf">
+      <DependentUpon>PhotoSystemV2.mdf</DependentUpon>
     </Content>
     <Content Include="Default.aspx" />
     <Content Include="Images\56aadb196de34027aa0e84f12487b296 %281%29.png" />
