@@ -15,7 +15,7 @@ namespace PhotoAlbumWEBAPPLICATION
         public SqlCommand comm;
         public DataSet ds;
         public SqlDataAdapter adap;
-        public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tinus\OneDrive\Desktop\323Project2\PhotoAlbumWEBAPPLICATION\PhotoAlbumWEBAPPLICATION\App_Data\PhotoSystemV2.mdf;Integrated Security=True";
+        public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ivanj\Desktop\PhotoAlbumWEBAPPLICATION\PhotoAlbumWEBAPPLICATION\App_Data\PhotoSystemV2.mdf;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
             Label1.Visible = false;
@@ -78,7 +78,7 @@ namespace PhotoAlbumWEBAPPLICATION
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Register.aspx");
         }
     }
 }

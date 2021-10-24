@@ -79,6 +79,7 @@
     <Content Include="StyleSheet1.css" />
     <Content Include="ViewUserPhotos.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -112,6 +113,13 @@
     </Compile>
     <Compile Include="ViewUserPhotos.aspx.designer.cs">
       <DependentUpon>ViewUserPhotos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
