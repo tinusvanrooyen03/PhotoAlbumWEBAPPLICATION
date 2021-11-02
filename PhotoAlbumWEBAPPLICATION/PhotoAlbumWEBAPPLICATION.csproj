@@ -71,17 +71,26 @@
     <Content Include="App_Data\PhotoSystemV2_log.ldf">
       <DependentUpon>PhotoSystemV2.mdf</DependentUpon>
     </Content>
+    <Content Include="AddAlbum.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Images\56aadb196de34027aa0e84f12487b296 %281%29.png" />
     <Content Include="Images\pexels-juan-pablo-serrano-arenas-1242348.jpg" />
     <Content Include="Main.aspx" />
     <Content Include="MainMenu.aspx" />
+    <Content Include="PhotoAlbumAdd.aspx" />
     <Content Include="StyleSheet1.css" />
     <Content Include="ViewUserPhotos.aspx" />
     <Content Include="Web.config" />
     <Content Include="Register.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAlbum.aspx.cs">
+      <DependentUpon>AddAlbum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddAlbum.aspx.designer.cs">
+      <DependentUpon>AddAlbum.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -105,6 +114,13 @@
     </Compile>
     <Compile Include="MainMenu.aspx.designer.cs">
       <DependentUpon>MainMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoAlbumAdd.aspx.cs">
+      <DependentUpon>PhotoAlbumAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhotoAlbumAdd.aspx.designer.cs">
+      <DependentUpon>PhotoAlbumAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewUserPhotos.aspx.cs">

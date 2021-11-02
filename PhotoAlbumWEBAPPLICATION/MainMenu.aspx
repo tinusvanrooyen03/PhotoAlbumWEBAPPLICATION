@@ -30,11 +30,20 @@
             <br />
             <br />
             <br />
-            <asp:Button ID="Button3" runat="server" CssClass="example_b" Text="Mange Albums" />
+            <asp:Button ID="Button3" runat="server" CssClass="example_b" Text="Add Albums" OnClick="Button3_Click" />
+            <br />
+            <br />
+            <br />
+            <asp:Button ID="Button4" runat="server" CssClass="example_b" OnClick="Button4_Click" Text="Add Photos To Album" />
+            <br />
+            <br />
         </div>
             </div>
-            <asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label>
+            <asp:Button ID="Button5" runat="server" CssClass="example_b" OnClick="Button5_Click" Text="View Albums" />
         </div>
+        <p class="auto-style1">
+            <asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label>
+        </p>
     </form>
 </body>
 </html>

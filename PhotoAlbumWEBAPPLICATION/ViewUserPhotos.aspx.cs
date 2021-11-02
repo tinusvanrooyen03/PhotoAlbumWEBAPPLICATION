@@ -12,7 +12,7 @@ namespace PhotoAlbumWEBAPPLICATION
     public partial class ViewUserPhotos : System.Web.UI.Page
     {
         public string query;
-        public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ivanj\Desktop\PhotoAlbumWEBAPPLICATION\PhotoAlbumWEBAPPLICATION\App_Data\PhotoSystemV2.mdf;Integrated Security=True";
+        public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tinus\OneDrive\Desktop\323Project2\PhotoAlbumWEBAPPLICATION\PhotoAlbumWEBAPPLICATION\App_Data\PhotoSystemV2.mdf;Integrated Security=True";
         public SqlConnection con;
         public void connection()
         {
@@ -31,11 +31,29 @@ namespace PhotoAlbumWEBAPPLICATION
             Gridview1.DataSource = dr;
             Gridview1.DataBind();
         }
+
+        public void albumbindGrid()
+        {
+            connection();
+            query = "Select * from Album WHERE UserID = '" + (string)Session["UserID"] + "' ";
+            SqlCommand com = new SqlCommand(query, con);
+            SqlDataReader dr = com.ExecuteReader();
+            GridView2.DataSource = dr;
+            GridView2.DataBind();
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
             
             if (!IsPostBack)
                 imagebindGrid();
+
+            if (!IsPostBack)
+                albumbindGrid();
+        }
+
+        protected void Gridview1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+ 
         }
     }
 }
