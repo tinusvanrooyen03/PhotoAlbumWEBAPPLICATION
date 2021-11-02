@@ -66,7 +66,7 @@ namespace PhotoAlbumWEBAPPLICATION
 
         protected void Button5_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("AlbumView.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
