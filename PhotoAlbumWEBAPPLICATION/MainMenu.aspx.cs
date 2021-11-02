@@ -61,7 +61,7 @@ namespace PhotoAlbumWEBAPPLICATION
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AddAlbumPhoto.aspx");
+            Response.Redirect("PhotoAlbumAdd.aspx");
         }
 
         protected void Button5_Click(object sender, EventArgs e)

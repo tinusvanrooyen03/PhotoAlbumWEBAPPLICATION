@@ -31,6 +31,15 @@ namespace PhotoAlbumWEBAPPLICATION
             Gridview1.DataSource = dr;
             Gridview1.DataBind();
         }
+        public void imagebindGridAlbum()
+        {
+            connection();
+            query = "Select * from Photo WHERE AlbumID = '" + TextBox1.Text + "' ";
+            SqlCommand com = new SqlCommand(query, con);
+            SqlDataReader dr = com.ExecuteReader();
+            Gridview1.DataSource = dr;
+            Gridview1.DataBind();
+        }
 
         public void albumbindGrid()
         {
@@ -53,7 +62,12 @@ namespace PhotoAlbumWEBAPPLICATION
 
         protected void Gridview1_SelectedIndexChanged(object sender, EventArgs e)
         {
- 
+            
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            imagebindGridAlbum();
         }
     }
 }

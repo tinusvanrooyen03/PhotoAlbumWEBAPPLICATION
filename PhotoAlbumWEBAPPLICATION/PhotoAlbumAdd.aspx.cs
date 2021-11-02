@@ -22,23 +22,63 @@ namespace PhotoAlbumWEBAPPLICATION
 
 
         }
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            
-            if (!IsPostBack)
-                imagebindGrid();
-        }
-
         public void imagebindGrid()
         {
             connection();
-            query = "Select * from Photo";
+            query = "Select * from Photo WHERE UserID = '" + (string)Session["UserID"] + "' ";
             SqlCommand com = new SqlCommand(query, con);
             SqlDataReader dr = com.ExecuteReader();
             Gridview1.DataSource = dr;
             Gridview1.DataBind();
         }
+
+        public void albumbindGrid()
+        {
+            connection();
+            query = "Select * from Album WHERE UserID = '" + (string)Session["UserID"] + "' ";
+            SqlCommand com = new SqlCommand(query, con);
+            SqlDataReader dr = com.ExecuteReader();
+            GridView2.DataSource = dr;
+            GridView2.DataBind();
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+            if (!IsPostBack)
+                imagebindGrid();
+
+            if (!IsPostBack)
+                albumbindGrid();
+        }
+
+        protected void Gridview1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                connection();
+                query = "UPDATE Photo SET AlbumID = @id WHERE PhotoID = '" + TextBox1.Text + "'";
+                SqlCommand comm = new SqlCommand(query, con);
+
+                comm.Parameters.AddWithValue("@id", TextBox2.Text);
+                
+                comm.ExecuteNonQuery();
+                con.Close();
+                Label1.Text = "Photo Added Succesfully";
+
+            }
+            catch
+            {
+                Label1.Text = "Please choose a user with corisponding ID to update";
+            }
+
+        }
     }
 }
+
 
     

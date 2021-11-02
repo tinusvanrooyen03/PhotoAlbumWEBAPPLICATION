@@ -8,7 +8,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    </form>
+        <br />
+        Select Photo<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
 
     <asp:GridView ID="Gridview1" runat="server" CssClass="auto-style2" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" Width="500px" BorderStyle="Solid" ForeColor="Black" OnSelectedIndexChanged="Gridview1_SelectedIndexChanged" style="margin-right: 241px">
             <Columns>
@@ -19,5 +20,14 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-</body>
+        <br />
+        Select Album<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <asp:GridView ID="GridView2" runat="server">
+        </asp:GridView>
+        <br />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" />
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    </form>
+
+    </body>
 </html>
