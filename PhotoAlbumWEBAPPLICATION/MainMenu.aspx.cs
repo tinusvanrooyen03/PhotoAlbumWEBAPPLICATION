@@ -46,7 +46,7 @@ namespace PhotoAlbumWEBAPPLICATION
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label3.Text = "Welcome " + getStringValue("Select Firstname from Users Where UserID = '" + Session["UserID"] + "'");
+            Label3.Text = "Hi " + getStringValue("Select Firstname from Users Where UserID = '" + Session["UserID"] + "'");
         }
 
         protected void Button2_Click(object sender, EventArgs e)
