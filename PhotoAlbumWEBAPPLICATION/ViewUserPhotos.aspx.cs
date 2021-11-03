@@ -33,22 +33,12 @@ namespace PhotoAlbumWEBAPPLICATION
         }
         public void imagebindGridAlbum()
         {
-            connection();
-            query = "Select * from Photo WHERE AlbumID = '" + TextBox1.Text + "' ";
-            SqlCommand com = new SqlCommand(query, con);
-            SqlDataReader dr = com.ExecuteReader();
-            Gridview1.DataSource = dr;
-            Gridview1.DataBind();
+            
         }
 
         public void albumbindGrid()
         {
-            connection();
-            query = "Select * from Album WHERE UserID = '" + (string)Session["UserID"] + "' ";
-            SqlCommand com = new SqlCommand(query, con);
-            SqlDataReader dr = com.ExecuteReader();
-            GridView2.DataSource = dr;
-            GridView2.DataBind();
+            
         }
         protected void Page_Load(object sender, EventArgs e)
         {

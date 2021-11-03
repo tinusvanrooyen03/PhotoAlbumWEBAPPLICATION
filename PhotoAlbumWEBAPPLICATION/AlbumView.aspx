@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel ="stylesheet" type="text/css" href="StyleSheet1.css" />
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,12 +20,18 @@
             </Columns>
         </asp:GridView>
         <br />
-        Select Album<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        Select Album<asp:TextBox ID="TextBox2" runat="server" CssClass="simple-tb" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
+        <br />
+        <br />
         <asp:GridView ID="GridView2" runat="server">
         </asp:GridView>
         <br />
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="View" />
+        <br />
+        <br />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="View" CssClass="example_b" />
+        <p>
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        </p>
     </form>
 
     </body>

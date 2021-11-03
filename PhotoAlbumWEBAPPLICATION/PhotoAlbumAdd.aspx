@@ -5,11 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel ="stylesheet" type="text/css" href="StyleSheet1.css" />
 </head>
 <body>
     <form id="form1" runat="server">
         <br />
-        Select Photo<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        Select Photo<asp:TextBox ID="TextBox1" runat="server" CssClass="simple-tb"></asp:TextBox>
+
+        <br />
 
     <asp:GridView ID="Gridview1" runat="server" CssClass="auto-style2" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" Width="500px" BorderStyle="Solid" ForeColor="Black" OnSelectedIndexChanged="Gridview1_SelectedIndexChanged" style="margin-right: 241px">
             <Columns>
@@ -21,11 +24,13 @@
             </Columns>
         </asp:GridView>
         <br />
-        Select Album<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        Select Album<asp:TextBox ID="TextBox2" runat="server" CssClass="simple-tb"></asp:TextBox>
+        <br />
+        <br />
         <asp:GridView ID="GridView2" runat="server">
         </asp:GridView>
         <br />
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" CssClass="example_b" />
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </form>
 

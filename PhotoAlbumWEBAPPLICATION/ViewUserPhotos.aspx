@@ -37,19 +37,13 @@
         </div>
         </div>
         <p class="auto-style1">
-            Add to Album</p>
-        <p class="auto-style2">
-            <asp:GridView ID="GridView2" runat="server" CssClass="btn">
-            </asp:GridView>
-        </p>
+            &nbsp;</p>
         <p class="auto-style2">
             &nbsp;</p>
         <p class="auto-style2">
-            Choose fro m specific Album<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-        </p>
+            &nbsp;</p>
         <p class="auto-style2">
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-        </p>
+            &nbsp;</p>
     </form>
 </body>
 </html>
