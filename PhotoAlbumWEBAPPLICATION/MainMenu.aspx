@@ -37,6 +37,7 @@
             <asp:Button ID="Button4" runat="server" CssClass="example_b" OnClick="Button4_Click" Text="Add Photos To Album" />
             <br />
             <br />
+            <br />
         </div>
             </div>
             <asp:Button ID="Button5" runat="server" CssClass="example_b" OnClick="Button5_Click" Text="View Albums" />

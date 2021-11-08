@@ -19,6 +19,8 @@
             <br />
             Enter Name of Album<asp:TextBox ID="TextBox1" runat="server" CssClass="simple-tb"></asp:TextBox>
             <br />
+            <br />
+            <br />
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" CssClass="example_b" />
         </div>
         <p class="auto-style1">

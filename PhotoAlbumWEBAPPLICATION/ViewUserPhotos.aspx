@@ -22,14 +22,13 @@
         <div>
             All user Photos<br />
             <br />
-        <asp:GridView ID="Gridview1" runat="server" CssClass="grid1" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" Width="500px" style="margin-left: 424px" OnSelectedIndexChanged="Gridview1_SelectedIndexChanged">
+        <asp:GridView ID="Gridview1" runat="server" CssClass="grid1" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" Width="500px" style="margin-left: 367px" OnSelectedIndexChanged="Gridview1_SelectedIndexChanged">
             <Columns>
                 <asp:TemplateField HeaderText="Image">
                     <ItemTemplate>
                         <asp:Image ID="Image1" runat="server" Height="400px" ImageUrl='<%# "Handler1.ashx?id_Image="+ Eval("PhotoID") %>' Width="600px" />
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Select" ShowHeader="True" Text="Button" />
             </Columns>
 
 <HeaderStyle BackColor="#7779AF" ForeColor="White"></HeaderStyle>

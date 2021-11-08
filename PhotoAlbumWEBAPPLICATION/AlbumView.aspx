@@ -6,11 +6,36 @@
 <head runat="server">
     <title></title>
     <link rel ="stylesheet" type="text/css" href="StyleSheet1.css" />
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+        }
+        .auto-style2 {
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
 
-    <asp:GridView ID="Gridview1" runat="server" CssClass="auto-style2" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" Width="500px" BorderStyle="Solid" ForeColor="Black" OnSelectedIndexChanged="Gridview1_SelectedIndexChanged" style="margin-right: 241px">
+        <div class="auto-style1">
+
+        <div class="auto-style1">
+
+            <br />
+            <br />
+        Select Album
+            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="simple-tb">
+            </asp:DropDownList>
+            <br />
+            <br />
+        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="View" CssClass="example_b" />
+            <br />
+            <br />
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <br />
+
+    <asp:GridView ID="Gridview1" runat="server" CssClass="auto-style2" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" Width="500px" BorderStyle="Solid" ForeColor="Black" OnSelectedIndexChanged="Gridview1_SelectedIndexChanged" style="margin-right: 241px" HorizontalAlign="Center">
             <Columns>
                 <asp:TemplateField HeaderText="Image">
                     <ItemTemplate>
@@ -19,19 +44,19 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-        <br />
-        Select Album<asp:TextBox ID="TextBox2" runat="server" CssClass="simple-tb" OnTextChanged="TextBox2_TextChanged"></asp:TextBox>
-        <br />
-        <br />
-        <asp:GridView ID="GridView2" runat="server">
-        </asp:GridView>
+            <div class="auto-style1">
+                <br />
         <br />
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="View" CssClass="example_b" />
+            </div>
+        <br />
+        <br />
+        <br />
         <p>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-        </p>
+            &nbsp;</p>
+        </div>
+        </div>
     </form>
 
     </body>

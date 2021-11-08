@@ -32,15 +32,7 @@ namespace PhotoAlbumWEBAPPLICATION
             Gridview1.DataBind();
         }
 
-        public void albumbindGrid()
-        {
-            connection();
-            query = "Select * from Album WHERE UserID = '" + (string)Session["UserID"] + "' ";
-            SqlCommand com = new SqlCommand(query, con);
-            SqlDataReader dr = com.ExecuteReader();
-            GridView2.DataSource = dr;
-            GridView2.DataBind();
-        }
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -48,7 +40,30 @@ namespace PhotoAlbumWEBAPPLICATION
                 imagebindGrid();
 
             if (!IsPostBack)
-                albumbindGrid();
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    SqlCommand cmd = new SqlCommand("Select * from Album WHERE UserID = '" + (string)Session["UserID"] + "' ", con);
+                    con.Open();
+                    DropDownList3.DataSource = cmd.ExecuteReader();
+                    DropDownList3.DataTextField = "AlbumName";
+                    DropDownList3.DataValueField = "AlbumID";
+                    DropDownList3.DataBind();
+                }
+            }
+
+            if (!IsPostBack)
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    SqlCommand cmd = new SqlCommand("Select * from Photo WHERE UserID = '" + (string)Session["UserID"] + "' ", con);
+                    con.Open();
+                    DropDownList2.DataSource = cmd.ExecuteReader();
+                    DropDownList2.DataTextField = "PhotoID";
+                    DropDownList2.DataValueField = "PhotoID";
+                    DropDownList2.DataBind();
+                }
+            }
         }
 
         protected void Gridview1_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,10 +76,10 @@ namespace PhotoAlbumWEBAPPLICATION
             try
             {
                 connection();
-                query = "UPDATE Photo SET AlbumID = @id WHERE PhotoID = '" + TextBox1.Text + "'";
+                query = "UPDATE Photo SET AlbumID = @id WHERE PhotoID = '" + DropDownList2.Text + "'";
                 SqlCommand comm = new SqlCommand(query, con);
 
-                comm.Parameters.AddWithValue("@id", TextBox2.Text);
+                comm.Parameters.AddWithValue("@id", DropDownList3.Text);
                 
                 comm.ExecuteNonQuery();
                 con.Close();

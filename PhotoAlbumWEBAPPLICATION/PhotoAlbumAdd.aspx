@@ -6,15 +6,25 @@
 <head runat="server">
     <title></title>
     <link rel ="stylesheet" type="text/css" href="StyleSheet1.css" />
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
+        <div class="auto-style1">
         <br />
-        Select Photo<asp:TextBox ID="TextBox1" runat="server" CssClass="simple-tb"></asp:TextBox>
+        Select Photo<asp:DropDownList ID="DropDownList2" runat="server" CssClass="simple-tb">
+            </asp:DropDownList>
+
+            <br />
+            <br />
 
         <br />
 
-    <asp:GridView ID="Gridview1" runat="server" CssClass="auto-style2" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" Width="500px" BorderStyle="Solid" ForeColor="Black" OnSelectedIndexChanged="Gridview1_SelectedIndexChanged" style="margin-right: 241px">
+    <asp:GridView ID="Gridview1" runat="server" CssClass="auto-style2" HeaderStyle-BackColor="#7779AF" HeaderStyle-ForeColor="white" Width="500px" BorderStyle="Solid" ForeColor="Black" OnSelectedIndexChanged="Gridview1_SelectedIndexChanged" style="margin-right: 241px" HorizontalAlign="Center">
             <Columns>
                 <asp:TemplateField HeaderText="Image">
                     <ItemTemplate>
@@ -23,15 +33,19 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
+            <div class="auto-style1">
         <br />
-        Select Album<asp:TextBox ID="TextBox2" runat="server" CssClass="simple-tb"></asp:TextBox>
+        Select Album<asp:DropDownList ID="DropDownList3" runat="server" CssClass="simple-tb">
+                </asp:DropDownList>
         <br />
         <br />
-        <asp:GridView ID="GridView2" runat="server">
-        </asp:GridView>
+            </div>
         <br />
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" CssClass="example_b" />
+        </div>
+        <p class="auto-style1">
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        </p>
     </form>
 
     </body>

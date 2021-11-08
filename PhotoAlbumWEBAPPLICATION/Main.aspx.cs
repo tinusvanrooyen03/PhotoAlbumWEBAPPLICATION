@@ -26,8 +26,19 @@ namespace PhotoAlbumWEBAPPLICATION
         protected void Page_Load(object sender, EventArgs e)
         {
             lblEvent.Visible = false;
+           
             if (!IsPostBack)
-                imagebindGrid();
+            {
+                using (SqlConnection con = new SqlConnection(constr))
+                {
+                    SqlCommand cmd = new SqlCommand("Select UserID, Firstname +' '+ Lastname as UserNaam from Users", con);
+                    con.Open();
+                    DropDownList1.DataSource = cmd.ExecuteReader();
+                    DropDownList1.DataTextField = "UserNaam";
+                    DropDownList1.DataValueField = "UserID";
+                    DropDownList1.DataBind();
+                }
+            }
         }
         private void Imageupload()
         {
@@ -45,22 +56,14 @@ namespace PhotoAlbumWEBAPPLICATION
                 com.Parameters.AddWithValue("@CapturedBy", SqlDbType.VarChar).Value = TextBox2.Text;
                 com.Parameters.AddWithValue("@GeoLocation", SqlDbType.VarChar).Value = TextBox3.Text;
                 com.Parameters.AddWithValue("@Tags", SqlDbType.VarChar).Value = TextBox4.Text;
-                com.Parameters.AddWithValue("@User", SqlDbType.Int).Value = TextBox5.Text;
+                com.Parameters.AddWithValue("@User", SqlDbType.Int).Value = DropDownList1.Text;
                 com.ExecuteNonQuery();
                 lblEvent.Visible = true;
                 lblEvent.Text = "Image Is Uploaded successfully";
-                imagebindGrid();
+                
             }
         }
-        public void imagebindGrid()
-        {
-            connection();
-            query = "Select * from Photo";
-            SqlCommand com = new SqlCommand(query, con);
-            SqlDataReader dr = com.ExecuteReader();
-            Gridview1.DataSource = dr;
-            Gridview1.DataBind();
-        }
+        
         protected void btnUpload_Click(object sender, EventArgs e)
         {
             Imageupload();
