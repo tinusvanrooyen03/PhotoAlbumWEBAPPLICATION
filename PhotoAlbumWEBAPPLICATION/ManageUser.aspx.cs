@@ -47,6 +47,25 @@ namespace PhotoAlbumWEBAPPLICATION
             }
         }
 
+        private void DeleteEntry(String sqlDelete)
+        {
+            // Delete the entery that the user selected
+            try
+            {
+                conn = new SqlConnection(constr);
+                conn.Open();
+                comm = new SqlCommand(sqlDelete, conn);
+                comm.Connection = conn;
+                comm.ExecuteNonQuery();
+                conn.Close();
+            }
+            catch (SqlException error)
+            {
+                lblUID.Text = "Please contact page advisor" + error.Message + "Error";
+                lblUID.Visible = true;
+            }
+        }
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -59,6 +78,13 @@ namespace PhotoAlbumWEBAPPLICATION
                 txtPassword.Text = getStringValue("Select Password from Users Where UserID = '" + Session["UserID"] + "'");
             }
 
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            DeleteEntry("Delete FROM Albums WHERE UserID = '" + Session["UserID"] + "'");
+            DeleteEntry("Delete FROM Photos WHERE UserID = '" + Session["UserID"] + "'");
+            DeleteEntry("Delete FROM Users WHERE UserID = '" + Session["UserID"] + "'");
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)

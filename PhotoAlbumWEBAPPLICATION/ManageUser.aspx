@@ -24,7 +24,7 @@
         </p>
         <p>
             <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" Text="Update" />
-            <asp:Button ID="btnDelete" runat="server" Text="Delete" />
+            <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" />
         </p>
         <asp:Label ID="lblUID" runat="server" Text="Label"></asp:Label>
     </form>
