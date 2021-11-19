@@ -130,6 +130,30 @@
             border-top-width: medium;
             margin-left: 9px;
         }
+        .auto-style7 {
+            color: white;
+            width: 200px;
+            height: 35px;
+            border-radius: 5px;
+            transition-property: background-color,border-radius,width,height,color;
+            transition-duration: 0.215s;
+            transition-delay: 0.215s;
+            text-align: center;
+            float: none;
+            border-bottom: 1px solid blue;
+            font-family: 'Raleway', sans-serif;
+            background-color: transparent;
+            border-left-style: none;
+            border-left-color: inherit;
+            border-left-width: medium;
+            border-right-style: none;
+            border-right-color: inherit;
+            border-right-width: medium;
+            border-top-style: none;
+            border-top-color: inherit;
+            border-top-width: medium;
+            margin-left: 44px;
+        }
     </style>
 </head>
 <body>
@@ -139,8 +163,12 @@
         <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="Upload And Send Photos"></asp:Label>
             </p>
         <p class="auto-style1">
+            <asp:Label ID="Label7" runat="server" Text="Photo Name: "></asp:Label>
+            <asp:TextBox ID="TextBox5" runat="server" CssClass="auto-style7"></asp:TextBox>
+        </p>
+            <p>
             <asp:Label ID="Label2" runat="server" Text="Captured Date: "></asp:Label>
-&nbsp;<asp:TextBox ID="TextBox1" runat="server" CssClass="auto-style4"></asp:TextBox>
+&nbsp;<asp:TextBox ID="TextBox1" runat="server" type ="date" CssClass="auto-style4"></asp:TextBox>
         </p>
         <p class="auto-style1">
             <asp:Label ID="Label3" runat="server" Text="Captured By: "></asp:Label>

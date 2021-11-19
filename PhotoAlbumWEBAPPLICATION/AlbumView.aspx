@@ -47,6 +47,7 @@
             <div class="auto-style1">
                 <br />
         <br />
+                <asp:Button ID="Button2" runat="server" CssClass="example_b" OnClick="Button2_Click" Text="Delete" />
         <br />
         <br />
             </div>

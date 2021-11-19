@@ -13,7 +13,7 @@ namespace PhotoAlbumWEBAPPLICATION
     public partial class Main : System.Web.UI.Page
     {
         public string query;
-        public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tinus\OneDrive\Desktop\323Project2\PhotoAlbumWEBAPPLICATION\PhotoAlbumWEBAPPLICATION\App_Data\PhotoSystemV2.mdf;Integrated Security=True";
+        public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PhotoSystemV2.mdf;Integrated Security=True";
         public SqlConnection con;
         public void connection()
         {
@@ -49,9 +49,10 @@ namespace PhotoAlbumWEBAPPLICATION
                 HttpPostedFile image = FileUpload1.PostedFile;
                 image.InputStream.Read(imgarray, 0, imagefilelenth);
                 connection();
-                query = "Insert into Photo (Photo, CapturedDate, CapturedBy, GeoLocation, Tags, UserID) values (@Photo, @CapturedDate, @CapturedBy, @GeoLocation, @Tags, @User)";
+                query = "Insert into Photo (Photo, PhotoName, CapturedDate, CapturedBy, GeoLocation, Tags, UserID) values (@Photo, @PhotoName, @CapturedDate, @CapturedBy, @GeoLocation, @Tags, @User)";
                 SqlCommand com = new SqlCommand(query, con);
                 com.Parameters.AddWithValue("@Photo", SqlDbType.Image).Value = imgarray;
+                com.Parameters.AddWithValue("@PhotoName", SqlDbType.VarChar).Value = TextBox5.Text;
                 com.Parameters.AddWithValue("@CapturedDate", SqlDbType.VarChar).Value = TextBox1.Text;
                 com.Parameters.AddWithValue("@CapturedBy", SqlDbType.VarChar).Value = TextBox2.Text;
                 com.Parameters.AddWithValue("@GeoLocation", SqlDbType.VarChar).Value = TextBox3.Text;

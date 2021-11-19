@@ -59,7 +59,7 @@ namespace PhotoAlbumWEBAPPLICATION
                     SqlCommand cmd = new SqlCommand("Select * from Photo WHERE UserID = '" + (string)Session["UserID"] + "' ", con);
                     con.Open();
                     DropDownList2.DataSource = cmd.ExecuteReader();
-                    DropDownList2.DataTextField = "PhotoID";
+                    DropDownList2.DataTextField = "PhotoName";
                     DropDownList2.DataValueField = "PhotoID";
                     DropDownList2.DataBind();
                 }

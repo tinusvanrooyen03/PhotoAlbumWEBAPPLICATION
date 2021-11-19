@@ -17,6 +17,9 @@ namespace PhotoAlbumWEBAPPLICATION
 
 
         }
+        
+
+        
         public void imagebindGrid()
         {
             connection();
@@ -63,6 +66,9 @@ namespace PhotoAlbumWEBAPPLICATION
 
         }
 
-        
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
