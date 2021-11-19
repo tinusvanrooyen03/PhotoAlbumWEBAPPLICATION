@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace PhotoAlbumWEBAPPLICATION
 {
@@ -49,9 +51,15 @@ namespace PhotoAlbumWEBAPPLICATION
         {
             conn = new SqlConnection(constr);
 
+            string pass = txtPassword.Text;
+            MD5CryptoServiceProvider sh = new MD5CryptoServiceProvider();
+            UTF32Encoding utf8 = new UTF32Encoding();
+            string hash = BitConverter.ToString(sh.ComputeHash(utf8.GetBytes(pass)));
+
+
             SqlCommand cmd = new SqlCommand("select * from Users where Username=@username and Password=@word", conn);
             cmd.Parameters.AddWithValue("@username", txtUsername.Text);
-            cmd.Parameters.AddWithValue("@word", txtPassword.Text);
+            cmd.Parameters.AddWithValue("@word", hash);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             sda.Fill(dt);
@@ -61,7 +69,7 @@ namespace PhotoAlbumWEBAPPLICATION
 
             if (dt.Rows.Count > 0)
             {
-                string sqlUserID = "SELECT UserID FROM Users WHERE Username = '" + txtUsername.Text + "' AND Password = '" + txtPassword.Text + "'";
+                string sqlUserID = "SELECT UserID FROM Users WHERE Username = '" + txtUsername.Text + "' AND Password = '" + hash + "'";
                 int userID = getPrimaryKeyValue(sqlUserID);
                 Session["UserID"] = userID.ToString();
                 Response.Redirect("MainMenu.aspx");
