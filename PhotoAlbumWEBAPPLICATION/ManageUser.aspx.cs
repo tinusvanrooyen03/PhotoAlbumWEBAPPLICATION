@@ -50,11 +50,15 @@ namespace PhotoAlbumWEBAPPLICATION
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblUID.Visible = false;
-            txtFirstName.Text = getStringValue("Select Firstname from Users Where UserID = '" + Session["UserID"] + "'");
-            txtLastName.Text = getStringValue("Select Lastname from Users Where UserID = '" + Session["UserID"] + "'");
-            txtUserID.Text = getStringValue("Select Username from Users Where UserID = '" + Session["UserID"] + "'");
-            txtPassword.Text = getStringValue("Select Password from Users Where UserID = '" + Session["UserID"] + "'");
+            if (!IsPostBack)
+            {
+                lblUID.Visible = false;
+                txtFirstName.Text = getStringValue("Select Firstname from Users Where UserID = '" + Session["UserID"] + "'");
+                txtLastName.Text = getStringValue("Select Lastname from Users Where UserID = '" + Session["UserID"] + "'");
+                txtUserID.Text = getStringValue("Select Username from Users Where UserID = '" + Session["UserID"] + "'");
+                txtPassword.Text = getStringValue("Select Password from Users Where UserID = '" + Session["UserID"] + "'");
+            }
+
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
@@ -63,24 +67,24 @@ namespace PhotoAlbumWEBAPPLICATION
             {
                 conn = new SqlConnection(constr);
                 conn.Open();
-                string sql = "UPDATE Users SET Firstname = @Firstname, Lastname = @Lastname, Username = @Username, Password = @Password WHERE UserID = '" + Session["UserID"] + "'";
+                string sql = "UPDATE Users SET Firstname = @first, Lastname = @last, Username = @name, Password = @word WHERE UserID = '" + Session["UserID"] + "'";
                 comm = new SqlCommand(sql, conn);
 
-                comm.Parameters.AddWithValue("@Firstname", txtFirstName.Text);
-                comm.Parameters.AddWithValue("@Lastname", txtLastName.Text);
-                comm.Parameters.AddWithValue("@Username", txtUserID.Text);
-                comm.Parameters.AddWithValue("@Password", txtPassword.Text);
-
-
+                comm.Parameters.AddWithValue("@first", txtFirstName.Text);
+                comm.Parameters.AddWithValue("@last", txtLastName.Text);
+                comm.Parameters.AddWithValue("@name", txtUserID.Text);
+                comm.Parameters.AddWithValue("@word", txtPassword.Text);
                 comm.ExecuteNonQuery();
                 conn.Close();
-                Response.Redirect("MainMenu.aspx");
+                lblUID.Text = "Updated data";
+                lblUID.Visible = true;
             }
             catch
             {
-                lblUID.Visible = true;
                 lblUID.Text = "ID not in context";
+                lblUID.Visible = true;
             }
+
 
         }
     }

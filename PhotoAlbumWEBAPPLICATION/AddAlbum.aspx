@@ -18,6 +18,7 @@
             Add Albums<br />
             <br />
             Enter Name of Album<asp:TextBox ID="TextBox1" runat="server" CssClass="simple-tb"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Name of album is required field"></asp:RequiredFieldValidator>
             <br />
             <br />
             <br />
