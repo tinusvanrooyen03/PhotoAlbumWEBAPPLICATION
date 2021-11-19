@@ -78,6 +78,8 @@
     <Content Include="Images\pexels-juan-pablo-serrano-arenas-1242348.jpg" />
     <Content Include="Main.aspx" />
     <Content Include="MainMenu.aspx" />
+    <Content Include="ManageAlbums.aspx" />
+    <Content Include="ManagePhotos.aspx" />
     <Content Include="ManageUser.aspx" />
     <Content Include="PhotoAlbumAdd.aspx" />
     <Content Include="StyleSheet1.css" />
@@ -123,6 +125,20 @@
     </Compile>
     <Compile Include="MainMenu.aspx.designer.cs">
       <DependentUpon>MainMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageAlbums.aspx.cs">
+      <DependentUpon>ManageAlbums.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageAlbums.aspx.designer.cs">
+      <DependentUpon>ManageAlbums.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManagePhotos.aspx.cs">
+      <DependentUpon>ManagePhotos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagePhotos.aspx.designer.cs">
+      <DependentUpon>ManagePhotos.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageUser.aspx.cs">
       <DependentUpon>ManageUser.aspx</DependentUpon>

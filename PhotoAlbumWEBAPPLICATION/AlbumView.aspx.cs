@@ -7,17 +7,25 @@ namespace PhotoAlbumWEBAPPLICATION
     public partial class AlbumView : System.Web.UI.Page
     {
         public string query;
-        public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tinus\OneDrive\Desktop\323Project2\PhotoAlbumWEBAPPLICATION\PhotoAlbumWEBAPPLICATION\App_Data\PhotoSystemV2.mdf;Integrated Security=True";
+        public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PhotoSystemV2.mdf;Integrated Security=True";
         public SqlConnection con;
+        public SqlCommand comm;
         public void connection()
         {
-
             con = new SqlConnection(constr);
             con.Open();
 
-
         }
         
+        private void DeleteEntry(string sqlDelete)
+        {
+            con = new SqlConnection(constr);
+            con.Open();
+            comm = new SqlCommand(sqlDelete, con);
+            comm.Connection = con;
+            comm.ExecuteNonQuery();
+            con.Close();
+        }
 
         
         public void imagebindGrid()
@@ -68,6 +76,7 @@ namespace PhotoAlbumWEBAPPLICATION
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            DeleteEntry("Delete FROM Album WHERE AlbumId = '" + DropDownList1.Text + "'");
 
         }
     }
