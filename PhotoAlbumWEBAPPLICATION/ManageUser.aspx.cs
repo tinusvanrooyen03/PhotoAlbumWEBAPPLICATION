@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace PhotoAlbumWEBAPPLICATION
 {
@@ -91,6 +93,11 @@ namespace PhotoAlbumWEBAPPLICATION
         {
             try
             {
+                string pass = txtPassword.Text;
+                MD5CryptoServiceProvider sh = new MD5CryptoServiceProvider();
+                UTF32Encoding utf8 = new UTF32Encoding();
+                string hash = BitConverter.ToString(sh.ComputeHash(utf8.GetBytes(pass)));
+
                 conn = new SqlConnection(constr);
                 conn.Open();
                 string sql = "UPDATE Users SET Firstname = @first, Lastname = @last, Username = @name, Password = @word WHERE UserID = '" + Session["UserID"] + "'";
@@ -99,7 +106,7 @@ namespace PhotoAlbumWEBAPPLICATION
                 comm.Parameters.AddWithValue("@first", txtFirstName.Text);
                 comm.Parameters.AddWithValue("@last", txtLastName.Text);
                 comm.Parameters.AddWithValue("@name", txtUserID.Text);
-                comm.Parameters.AddWithValue("@word", txtPassword.Text);
+                comm.Parameters.AddWithValue("@word", hash);
                 comm.ExecuteNonQuery();
                 conn.Close();
                 lblUID.Text = "Updated data";
