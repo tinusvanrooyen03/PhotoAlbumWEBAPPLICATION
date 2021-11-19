@@ -43,6 +43,9 @@
             <asp:Button ID="Button5" runat="server" CssClass="example_b" OnClick="Button5_Click" Text="View Albums" />
         </div>
         <p class="auto-style1">
+            <asp:Button ID="btnManageAcc" runat="server" CssClass="example_b" OnClick="btnManageAcc_Click" Text="Manage Account" />
+        </p>
+        <p class="auto-style1">
             <asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label>
         </p>
     </form>

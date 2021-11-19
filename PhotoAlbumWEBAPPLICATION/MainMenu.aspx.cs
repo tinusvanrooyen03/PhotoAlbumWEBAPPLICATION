@@ -16,7 +16,7 @@ namespace PhotoAlbumWEBAPPLICATION
         public DataSet ds;
         public SqlDataAdapter adap;
         public SqlDataReader datread;
-        public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\tinus\OneDrive\Desktop\323Project2\PhotoAlbumWEBAPPLICATION\PhotoAlbumWEBAPPLICATION\App_Data\PhotoSystemV2.mdf;Integrated Security=True";
+        public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PhotoSystemV2.mdf;Integrated Security=True";
         public string first, last;
 
         public string getStringValue(string sql)
@@ -67,6 +67,11 @@ namespace PhotoAlbumWEBAPPLICATION
         protected void Button5_Click(object sender, EventArgs e)
         {
             Response.Redirect("AlbumView.aspx");
+        }
+
+        protected void btnManageAcc_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageUser.aspx");
         }
 
         protected void Button1_Click(object sender, EventArgs e)
