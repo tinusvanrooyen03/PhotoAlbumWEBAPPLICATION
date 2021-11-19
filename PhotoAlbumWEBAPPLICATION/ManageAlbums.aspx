@@ -5,10 +5,31 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link rel ="stylesheet" type="text/css" href="StyleSheet1.css" />
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class="auto-style1">
+            <asp:Label ID="Label1" runat="server" Font-Size="XX-Large" Text="Manage Albums"></asp:Label>
+            <br />
+            <br />
+            Select Album: <asp:DropDownList ID="DropDownList1" runat="server" CssClass="simple-tb">
+            </asp:DropDownList>
+            <br />
+            <br />
+            Album Name:
+            <asp:TextBox ID="TextBox1" runat="server" CssClass="simple-tb"></asp:TextBox>
+            <br />
+            <br />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Update " CssClass="example_b" />
+            <br />
+            <br />
+            <asp:Button ID="Button2" runat="server" Text="Delete " CssClass="example_b" OnClick="Button2_Click" />
         </div>
     </form>
 </body>

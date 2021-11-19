@@ -92,6 +92,11 @@ namespace PhotoAlbumWEBAPPLICATION
             }
 
         }
+
+        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

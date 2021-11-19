@@ -56,10 +56,10 @@
             <asp:Button ID="Button6" runat="server" OnClick="Button6_Click" Text="Manage Account" CssClass="example_b" />
         </p>
         <p class="auto-style1">
-            <asp:Button ID="Button7" runat="server" CssClass="example_b" Text="Manage Albums" Width="256px" />
+            <asp:Button ID="Button7" runat="server" CssClass="example_b" OnClick="Button7_Click" Text="Manage Albums" Width="256px" />
         </p>
         <p class="auto-style1">
-            <asp:Button ID="Button8" runat="server" CssClass="example_b" Text="Manage Photos" Width="262px" />
+            <asp:Button ID="Button8" runat="server" CssClass="example_b" Text="Manage Photos" Width="262px" OnClick="Button8_Click" />
         </p>
         <p class="auto-style1">
             <asp:Label ID="Label2" runat="server" Text="Label" Visible="False"></asp:Label>

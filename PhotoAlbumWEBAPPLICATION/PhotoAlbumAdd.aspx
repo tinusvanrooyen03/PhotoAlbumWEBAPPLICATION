@@ -16,7 +16,7 @@
     <form id="form1" runat="server">
         <div class="auto-style1">
         <br />
-        Select Photo<asp:DropDownList ID="DropDownList2" runat="server" CssClass="simple-tb">
+        Select Photo<asp:DropDownList ID="DropDownList2" runat="server" CssClass="simple-tb" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged">
             </asp:DropDownList>
 
             <br />

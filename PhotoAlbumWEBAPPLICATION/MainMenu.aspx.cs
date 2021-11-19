@@ -74,6 +74,16 @@ namespace PhotoAlbumWEBAPPLICATION
             Response.Redirect("ManageUser.aspx");
         }
 
+        protected void Button7_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageAlbums.aspx");
+        }
+
+        protected void Button8_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ManagePhotos.aspx");
+        }
+
         protected void Button1_Click(object sender, EventArgs e)
         {
             Response.Redirect("ViewUserPhotos.aspx");

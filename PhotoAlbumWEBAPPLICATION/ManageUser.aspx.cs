@@ -17,6 +17,7 @@ namespace PhotoAlbumWEBAPPLICATION
         public SqlDataAdapter adap;
         public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PhotoSystemV2.mdf;Integrated Security=True";
 
+
         public string getStringValue(string sql)
         {
             conn = new SqlConnection(constr);
@@ -67,7 +68,7 @@ namespace PhotoAlbumWEBAPPLICATION
             comm.Parameters.AddWithValue("@word", TextBox4.Text);
             comm.ExecuteNonQuery();
             conn.Close();
-            
+             
         }
 
 
