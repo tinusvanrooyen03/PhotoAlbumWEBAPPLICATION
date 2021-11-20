@@ -42,6 +42,9 @@
             </div>
         <br />
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Add" CssClass="example_b" />
+            <br />
+            <br />
+            <asp:Button ID="Button2" runat="server" CssClass="example_b" OnClick="Button2_Click" Text="Main Menu" />
         </div>
         <p class="auto-style1">
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>

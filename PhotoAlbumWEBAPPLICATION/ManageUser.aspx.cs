@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
+
 
 namespace PhotoAlbumWEBAPPLICATION
 {
@@ -50,13 +53,20 @@ namespace PhotoAlbumWEBAPPLICATION
                 TextBox1.Text = getStringValue("Select Firstname from Users Where UserID = '" + Session["UserID"] + "'");
                 TextBox2.Text = getStringValue("Select Lastname from Users Where UserID = '" + Session["UserID"] + "'");
                 TextBox3.Text = getStringValue("Select Username from Users Where UserID = '" + Session["UserID"] + "'");
-                TextBox4.Text = getStringValue("Select Password from Users Where UserID = '" + Session["UserID"] + "'");
+                
             }
+            Label1.Visible = false;
            
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
+
+            string pass = TextBox4.Text;
+            MD5CryptoServiceProvider sh = new MD5CryptoServiceProvider();
+            UTF32Encoding utf8 = new UTF32Encoding();
+            string hash = BitConverter.ToString(sh.ComputeHash(utf8.GetBytes(pass)));
+
             conn = new SqlConnection(constr);
             conn.Open();
             string sql = "UPDATE Users SET Firstname = @first, Lastname = @last, Username = @name, Password = @word WHERE UserID = '" + Session["UserID"] + "'";
@@ -65,7 +75,7 @@ namespace PhotoAlbumWEBAPPLICATION
             comm.Parameters.AddWithValue("@first", TextBox1.Text);
             comm.Parameters.AddWithValue("@last", TextBox2.Text);
             comm.Parameters.AddWithValue("@name", TextBox3.Text);
-            comm.Parameters.AddWithValue("@word", TextBox4.Text);
+            comm.Parameters.AddWithValue("@word", hash);
             comm.ExecuteNonQuery();
             conn.Close();
              
@@ -86,6 +96,7 @@ namespace PhotoAlbumWEBAPPLICATION
             catch (SqlException error)
             {
                 Label1.Text = "Please contact page advisor!\n" + error;
+                Label1.Visible = true;
             }
         }
         protected void Button2_Click(object sender, EventArgs e)
@@ -94,6 +105,11 @@ namespace PhotoAlbumWEBAPPLICATION
             DeleteEntry("Delete FROM Album WHERE UserID = '" + Session["UserID"] + "'");
             DeleteEntry("Delete FROM Users WHERE UserID = '" + Session["UserID"] + "'");
             Response.Redirect("Default.aspx");
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainMenu.aspx");
         }
     }
 }

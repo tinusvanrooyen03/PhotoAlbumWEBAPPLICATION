@@ -64,6 +64,8 @@ namespace PhotoAlbumWEBAPPLICATION
                     DropDownList2.DataBind();
                 }
             }
+
+            Label1.Visible = false;
         }
 
         protected void Gridview1_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,6 +91,7 @@ namespace PhotoAlbumWEBAPPLICATION
             catch
             {
                 Label1.Text = "Please choose a user with corisponding ID to update";
+                Label1.Visible = true;
             }
 
         }
@@ -96,6 +99,11 @@ namespace PhotoAlbumWEBAPPLICATION
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainMenu.aspx");
         }
     }
 }

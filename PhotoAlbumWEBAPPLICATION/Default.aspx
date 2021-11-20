@@ -25,9 +25,11 @@
         <p class="auto-style1">
             Username:
             <asp:TextBox ID="txtUsername" runat="server" CssClass="simple-tb"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtUsername" ErrorMessage="Enter A Value"></asp:RequiredFieldValidator>
         </p>
         <p class="auto-style1">
-            Password:<asp:TextBox ID="txtPassword" runat="server" CssClass="simple-tb"></asp:TextBox>
+            Password:<asp:TextBox ID="txtPassword" runat="server" CssClass="simple-tb" TextMode="Password"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPassword" ErrorMessage="Enter A Value"></asp:RequiredFieldValidator>
         </p>
         <p class="auto-style1">
             <asp:Button ID="btnLogin" runat="server" Text="Log in" OnClick="btnLogin_Click1" CssClass="example_b" />

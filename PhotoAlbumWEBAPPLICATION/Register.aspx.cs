@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Security.Cryptography;
+using System.Text;
 
 namespace PhotoAlbumWEBAPPLICATION
 {
@@ -25,7 +26,7 @@ namespace PhotoAlbumWEBAPPLICATION
       
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblErr.Visible = false;
         }
 
         protected void btnRegister_Click(object sender, EventArgs e)
@@ -167,6 +168,9 @@ namespace PhotoAlbumWEBAPPLICATION
                         if (isnewUsername)
                         {
                             string pass = txtPass1.Text;
+                            MD5CryptoServiceProvider sh = new MD5CryptoServiceProvider();
+                            UTF32Encoding utf8 = new UTF32Encoding();
+                            string hash = BitConverter.ToString(sh.ComputeHash(utf8.GetBytes(pass)));
 
                             string insert_NewUser = "INSERT INTO Users VALUES(@Firstname,@Lastname,@Username,@Password)";
                             conn = new SqlConnection(constr);
@@ -175,7 +179,7 @@ namespace PhotoAlbumWEBAPPLICATION
                             cmd.Parameters.AddWithValue("@Firstname", txtFirstName.Text);
                             cmd.Parameters.AddWithValue("@Lastname", txtLastName.Text);
                             cmd.Parameters.AddWithValue("@Username", txtUsername.Text);
-                            cmd.Parameters.AddWithValue("@Password", txtPass1.Text);
+                            cmd.Parameters.AddWithValue("@Password", hash);
                             cmd.ExecuteNonQuery();
                            lblErr.Text = "You have been added as a new user of the Photo Album Website app";
                             lblErr.Visible = true;
@@ -202,6 +206,16 @@ namespace PhotoAlbumWEBAPPLICATION
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             Response.Redirect("Default.aspx");
+        }
+
+        protected void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtPass2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

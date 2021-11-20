@@ -18,7 +18,7 @@ namespace PhotoAlbumWEBAPPLICATION
         public string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\PhotoSystemV2.mdf;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Label1.Visible = false;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -40,7 +40,13 @@ namespace PhotoAlbumWEBAPPLICATION
             catch
             {
                 Label1.Text = "Please enter valid ID";
+                Label1.Visible = true;
             }
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainMenu.aspx");
         }
     }
 }

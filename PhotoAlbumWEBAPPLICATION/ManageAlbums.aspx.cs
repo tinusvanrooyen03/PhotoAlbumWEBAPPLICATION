@@ -86,5 +86,10 @@ namespace PhotoAlbumWEBAPPLICATION
             DeleteEntry("Delete FROM Album WHERE AlbumID = '" +DropDownList1.Text+ "'");
             Response.Redirect("AlbumView.aspx");
         }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("MainMenu.aspx");
+        }
     }
 }

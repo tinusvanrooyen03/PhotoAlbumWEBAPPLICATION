@@ -26,7 +26,7 @@ namespace PhotoAlbumWEBAPPLICATION
         public void imagebindGrid()
         {
             connection();
-            query = "Select * from Photo WHERE UserID = '" + (string)Session["UserID"] +"' ";
+            query = "Select PhotoID, Photo, PhotoName, CapturedDate, GeoLocation, Tags, CapturedBy from Photo WHERE UserID = '" + (string)Session["UserID"] +"' ";
             SqlCommand com = new SqlCommand(query, con);
             SqlDataReader dr = com.ExecuteReader();
             Gridview1.DataSource = dr;
@@ -59,6 +59,11 @@ namespace PhotoAlbumWEBAPPLICATION
         protected void Button1_Click(object sender, EventArgs e)
         {
             imagebindGridAlbum();
+        }
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("MainMenu.aspx");
         }
     }
 }

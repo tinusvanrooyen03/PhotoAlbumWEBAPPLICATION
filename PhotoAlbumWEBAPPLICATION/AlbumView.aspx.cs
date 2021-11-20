@@ -31,7 +31,7 @@ namespace PhotoAlbumWEBAPPLICATION
         public void imagebindGrid()
         {
             connection();
-            query = "Select * from Photo WHERE AlbumID = '" +DropDownList1.Text + "' ";
+            query = "Select PhotoID, Photo, PhotoName, CapturedDate, GeoLocation, Tags, CapturedBy  from Photo WHERE AlbumID = '" +DropDownList1.Text + "' ";
             SqlCommand com = new SqlCommand(query, con);
             SqlDataReader dr = com.ExecuteReader();
             Gridview1.DataSource = dr;
@@ -54,6 +54,7 @@ namespace PhotoAlbumWEBAPPLICATION
                     DropDownList1.DataBind();
                 }
             }
+            Label1.Visible = false;
                 
         }
 
@@ -78,6 +79,11 @@ namespace PhotoAlbumWEBAPPLICATION
         {
             DeleteEntry("Delete FROM Album WHERE AlbumId = '" + DropDownList1.Text + "'");
 
+        }
+
+        protected void Button2_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("MainMenu.aspx");
         }
     }
 }

@@ -22,6 +22,8 @@
 
         <div class="auto-style1">
 
+            <asp:Label ID="Label2" runat="server" Font-Size="XX-Large" Text="View Album"></asp:Label>
+
             <br />
             <br />
         Select Album
@@ -44,9 +46,10 @@
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
-            <div class="auto-style1">
+            <div>
                 <br />
         <br />
+                <asp:Button ID="Button2" runat="server" CssClass="example_b" OnClick="Button2_Click1" Text="Main Menu" />
         <br />
         <br />
             </div>

@@ -36,7 +36,8 @@
         </div>
         </div>
         <p class="auto-style1">
-            &nbsp;</p>
+            <asp:Button ID="Button1" runat="server" CssClass="example_b" OnClick="Button1_Click1" Text="Main Menu" />
+        </p>
         <p class="auto-style2">
             &nbsp;</p>
         <p class="auto-style2">
